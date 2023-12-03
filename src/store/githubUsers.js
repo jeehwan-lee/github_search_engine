@@ -5,7 +5,7 @@ export const userGithubUsersStore = create((set) => ({
   users: [],
   totalCount: 0,
   loading: false,
-  searchUsers: async (q, page) => {
+  searchUsers: async (q, page = 1) => {
     set({ loading: true });
 
     const res = await axios.get(
