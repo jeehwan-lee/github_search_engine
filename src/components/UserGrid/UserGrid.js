@@ -52,17 +52,19 @@ function UserGrid() {
         >
           {users.map((user, index) => (
             <Grid item xs={1} sm={1} md={1} key={index}>
-              <UserItem />
+              <UserItem user={user} />
             </Grid>
           ))}
         </Grid>
-        <Pagination
-          sx={{ margin: "auto" }}
-          page={currentPage}
-          count={totalPageCount}
-          color="primary"
-          onChange={handleChangePage}
-        />
+        {totalCount !== 0 && (
+          <Pagination
+            sx={{ margin: "auto" }}
+            page={currentPage}
+            count={totalPageCount}
+            color="primary"
+            onChange={handleChangePage}
+          />
+        )}
       </>
     );
   }
