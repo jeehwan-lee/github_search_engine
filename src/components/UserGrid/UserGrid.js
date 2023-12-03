@@ -20,7 +20,7 @@ function UserGrid() {
 
   useEffect(() => {
     const query = searchParams.get("q");
-    const page = searchParams.get("page");
+    const page = searchParams.get("page") ?? 1;
 
     if (!query) return;
 
@@ -28,9 +28,7 @@ function UserGrid() {
   }, [searchParams, searchUsers]);
 
   useEffect(() => {
-    const page = searchParams.get("page");
-
-    if (!page) return;
+    const page = searchParams.get("page") ?? 1;
     setCurrentPage(parseInt(page));
   }, [searchParams]);
 
@@ -47,7 +45,7 @@ function UserGrid() {
         <Grid
           container
           spacing={{ xs: 2, sm: 2, md: 2 }}
-          colums={{ xs: 2, sm: 3, md: 4 }}
+          columns={{ xs: 2, sm: 3, md: 4 }}
           style={{ padding: "10px" }}
         >
           {users.map((user, index) => (
@@ -60,7 +58,7 @@ function UserGrid() {
           <Pagination
             sx={{ margin: "auto" }}
             page={currentPage}
-            count={totalPageCount}
+            count={totalPageCount()}
             color="primary"
             onChange={handleChangePage}
           />

@@ -33,7 +33,7 @@ function UserItem({ user: { login, avatar_url } }) {
             previous: searchParams.get("page"),
             q: searchParams.get("q"),
           }}
-          xs={{ margin: "auto" }}
+          sx={{ margin: "auto" }}
         >
           Info
         </Button>
