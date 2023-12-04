@@ -4,12 +4,11 @@ import {
   Card,
   CardActions,
   CardContent,
-  Link,
   Typography,
 } from "@mui/material";
 import React from "react";
 import InfoIcon from "@mui/icons-material/Info";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 function UserItem({ user: { login, avatar_url } }) {
   const [searchParams, setSearchParams] = useSearchParams();

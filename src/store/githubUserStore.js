@@ -7,9 +7,7 @@ export const useGithubUserStore = create((set) => ({
   getUser: async (username) => {
     set({ loading: true });
 
-    const res = await axios.get(
-      `https://api.github.com/search/users/${username}`
-    );
+    const res = await axios.get(`https://api.github.com/users/${username}`);
 
     set({ loading: false, user: res.data });
   },
