@@ -1,9 +1,3 @@
-
-zustand -> useEffect return 을 통해 초기화
-합성 컴포넌트
-반응형 구현
-
-
 # Github Search Engine
 > Github에서 제공하는 REST API를 활용한 Github User 검색 서비스입니다.
 
@@ -17,7 +11,7 @@ zustand -> useEffect return 을 통해 초기화
   
   - [사용기술](#3-사용기술)
     
-  - [실행화면](#4-실행화면)
+- [실행화면](#실행화면)
   
 - [API 목록](#api-목록)
 
@@ -60,15 +54,21 @@ zustand -> useEffect return 을 통해 초기화
  
   - Zustand (상태관리)
   
-### 4. 실행화면
+## 실행화면
 
 ## API 목록
 
-> https://api.github.com/search/users?q=${q}&per_page=20&page=${page}
+> `https://api.github.com/search/users?q=${q}&per_page=${per_page}&page=${page}`
 
-> https://api.github.com/users/${username}
+검색할 User를 입력하면 해당 User ID를 통해 UserList를 가져옵니다.
 
-> https://api.github.com/users/${username}/repos?per_page=30&page=${page}
+> `https://api.github.com/users/${username}`
+
+username을 통해 해당 User의 세부정보를 가져옵니다.
+
+> `https://api.github.com/users/${username}/repos?per_page=${per_page}&page=${page}`
+
+username을 통해 해당 User의 Repository 정보를 가져옵니다.
 
 
 ## 후기
