@@ -1,5 +1,6 @@
 # Github Search Engine
 > Github에서 제공하는 REST API를 활용한 Github user 검색 서비스입니다.
+
 [Github user 검색서비스](https://reliable-croissant-0c2e0e.netlify.app/)
 
 ## 목차
