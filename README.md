@@ -45,14 +45,12 @@
 - User Repository page 이동
 
 ### 3. 사용기술
-
-- 프론트엔드
-  
-  - Javascript
-  
-  - React.js
  
-  - Zustand (상태관리)
+- Javascript
+  
+- React.js
+ 
+- Zustand (상태관리)
   
 ## 실행화면
 
