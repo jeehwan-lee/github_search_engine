@@ -9,7 +9,9 @@ import {
 } from "@mui/material";
 import React, { useEffect } from "react";
 import { useGithubUserStore } from "../../store/githubUserStore";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import dayjs from "dayjs";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function UserInfo() {
   const {
@@ -35,6 +37,21 @@ function UserInfo() {
   } = useGithubUserStore();
 
   const { username } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const onClickNavigateToList = () => {
+    if (!location.state) {
+      navigate("/");
+    } else {
+      navigate({
+        pathname: "/",
+        search: !!location.state?.previous
+          ? `?q=${location.state?.q}&page=${location.state?.previous}`
+          : `?q=${location.state.q}`,
+      });
+    }
+  };
 
   useEffect(() => {
     getUser(username);
@@ -49,6 +66,13 @@ function UserInfo() {
   } else {
     return (
       <>
+        <Button
+          style={{ margin: "10px" }}
+          onClick={onClickNavigateToList}
+          startIcon={<ArrowBackIcon />}
+        >
+          돌아가기
+        </Button>
         <Card variant="outlined" sx={{ margin: "10px" }}>
           <CardContent sx={{ textAlign: "center" }}>
             <Avatar
@@ -99,10 +123,10 @@ function UserInfo() {
               following 수 : {following}
             </Typography>
             <Typography variant="subtitle1">
-              Github 생성일 : {created_at}
+              Github 생성일 : {dayjs(created_at).format("YYYY.MM.DD h:mm A")}
             </Typography>
             <Typography variant="subtitle1">
-              최근 업데이트일 : {updated_at}
+              최근 업데이트일 : {dayjs(updated_at).format("YYYY.MM.DD h:mm A")}
             </Typography>
           </CardContent>
         </Card>
