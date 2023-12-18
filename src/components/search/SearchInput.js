@@ -9,8 +9,16 @@ const Input = styled.input`
   padding-left: 10px;
 `;
 
-function SearchInput() {
-  return <Input placeholder="Github User를 입력하세요" />;
+function SearchInput({ searchText, setSearchText }) {
+  return (
+    <Input
+      placeholder="Github User를 입력하세요"
+      value={searchText}
+      onChange={(e) => {
+        setSearchText(e.target.value);
+      }}
+    />
+  );
 }
 
 export default SearchInput;

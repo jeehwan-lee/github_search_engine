@@ -6,11 +6,12 @@ const Container = styled.div`
   position: absolute;
   top: 18px;
   right: 11%;
+  cursor: pointer;
 `;
 
-function SearchButton() {
+function SearchButton({ searchText }) {
   return (
-    <Container>
+    <Container onClick={() => console.log(searchText)}>
       <SearchIcon />
     </Container>
   );
