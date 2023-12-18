@@ -9,6 +9,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px 30px;
+  background-color: #87cefa;
 `;
 
 function HeaderContainer({ children }) {
