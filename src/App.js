@@ -3,11 +3,18 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Main from "./pages/Main/Main";
 import User from "./pages/User/User";
+import { Header } from "./components/header/Header";
 
 function App() {
   return (
     <>
-      <AppBar position="static">
+      <Header>
+        <Header.Left>
+          <Header.Logo />
+          <Header.Title />
+        </Header.Left>
+      </Header>
+      {/* <AppBar position="static">
         <Toolbar>
           <IconButton href="/">
             <GitHubIcon sx={{ color: "white", marginRight: "20px" }} />
@@ -16,7 +23,7 @@ function App() {
             Github Search Engine
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
       <div
         style={{
           maxWidth: "1000px",
