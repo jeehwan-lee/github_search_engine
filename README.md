@@ -17,15 +17,12 @@
   
 - [API 목록](#api-목록)
 
-- [후기](#후기)
-
-
 ## 들어가며
 ### 1. 프로젝트 소개
 
-이 프로젝트는 Github에서 제공하는 REST API를 활용한 Github user 검색 서비스이며 
+이 프로젝트는 Github에서 제공하는 REST API를 활용한 Github user 검색 서비스이며
 
-프로젝트를 통해 배우고 싶은것은 다음과 같습니다.
+현재는 리팩토링을 하고 있습니다. 이번 프로젝트를 통해 배우고 싶은것은 다음과 같습니다.
 
 - 반응형 웹 구현
 
@@ -69,6 +66,3 @@ username을 통해 해당 user의 세부정보를 가져옵니다.
 > `https://api.github.com/users/${username}/repos?per_page=${per_page}&page=${page}`
 
 username을 통해 해당 User의 Repository 정보를 가져옵니다.
-
-
-## 후기
